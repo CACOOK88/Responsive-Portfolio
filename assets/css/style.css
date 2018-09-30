@@ -1,0 +1,256 @@
+/**************************************************************************
+
+        CSS FOR ALL PAGES
+
+**************************************************************************/
+
+html,
+body {
+    /* needed to add these to get horizontal scroll bar off the screen */
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    color: #777;
+    background-image: url("circles-light.png");
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.header-container {
+    background: #fff;
+    color: white;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+}
+
+.header-subcontainer {
+    width: 960px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+.name {
+    background: #4aaaa5;
+    float: left;
+    padding: 20px;
+    margin: 0;
+    border-radius: 5px
+}
+
+.nav {
+    float: right;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: right;
+}
+
+.nav a {
+    font-size: 20px;
+    color: #777;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: all .5s;
+}
+
+.nav a:hover {
+    color: #AA6B4A;
+    font-size: 22px;
+}
+
+.header-container::after {
+    /* clearfix for floated header */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content {
+    /*  this is the wrapper box and used for page height  */
+    width: 960px;
+    line-height: 1.5em;
+    /*  min-height calc used to sticky the footer at the
+        bottom of the pages even when the content above is
+        is short.  */
+    min-height: calc( 100% - 120px);
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+}
+
+.content-box {
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 02%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #fff;
+    overflow: auto;
+}
+
+.content-header {
+    color: #4aaaa5;
+}
+
+hr {
+    /*  horizontal line break. I was playing around with
+        the styling and was able to get it to look like
+        the pretty cool thin oval. Good find for added
+        style  */
+    background: #ccc;
+    color: #ccc;
+    border: 5px solid;
+    border-radius: 90%;
+}
+
+.content::after {
+    /* clearfix for floated content */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.footer-container, 
+.push {
+    /*  Used this to push the div class to ensure content
+        didnt get placed behind the footer when scrolled
+        all the way to the bottom */
+    height: 60px;
+} 
+
+.footer-container {
+    position: relative;
+    text-align: center;
+    /* background: #4aaaa5;
+    height: 60px; */
+    padding-bottom: 0px;
+}
+
+.footer-subcontainer {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width:100%;
+    background: #666;
+    height: 50px;
+    padding-bottom: 10;
+    z-index: 2;
+    border-top: 8px solid #4aaaa5;
+}
+
+/* ********************************************************
+
+        INDEX.HTML CSS SECTION
+
+***********************************************************/
+
+
+
+.profile-image {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+/* ********************************************************
+
+        PORTFOLIO.HTML CSS SECTION
+
+**********************************************************/
+
+.grid-container {
+    /*  3 column grid */
+    /*  grid seems to be wider than 960px */
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-gap: 5px;
+}
+
+.thumbnail {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border: solid #ddd 3px;
+    border-radius: 5px;
+}
+
+.thumbnail-banner {
+    /* Placing the banner on the page and vertically centering text */
+    position: absolute;
+    bottom: 5px;
+    background: #4aaaa5;
+    color: white;
+    font-size: 22px;
+    z-index: 4;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    border-radius: 60%;
+    padding-bottom: 15px;
+}
+
+.thumbnail-image {
+    max-width: 300px; 
+    max-height: 100%;
+    margin:auto;
+    display:block;
+    border-radius: 3px;
+    transition: all 1s linear;
+}
+
+.thumbnail-image:hover {
+    /* add some hover styling */
+    filter: blur(5px);
+}
+
+
+/* ********************************************************
+
+        CONTACT.HTML CSS SECTION
+
+**********************************************************/
+
+label {
+    font-size: 20px;
+}
+
+input, 
+textarea {
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background: #4aaaa5;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    width: 130px;
+}
+
+input[type="submit"]:hover {
+    background: #F6DB5F;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+}
+
